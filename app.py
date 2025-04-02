@@ -1,5 +1,7 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow, QSize
+
+from PyQt6.QtCore import QSize, Qt
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
 
 
 class MainWindow (QMainWindow):
@@ -7,6 +9,7 @@ class MainWindow (QMainWindow):
         super().__init__()
         self.setWindowTitle('my app')
         button = QPushButton('Pushh')
+        self.setFixedSize(QSize(400, 300))
         self.setCentralWidget(button)
 
 app = QApplication(sys.argv)
