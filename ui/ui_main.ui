@@ -28,13 +28,13 @@ font-family: Zen Kaku Gothic New;</string>
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>30</y>
       <width>361</width>
-      <height>25</height>
+      <height>27</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -108,7 +108,7 @@ font-family: Zen Kaku Gothic New;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../qrc/rec-rc.qrc"/>
+  <include location="../qrc/rc-res.qrc"/>
  </resources>
  <connections/>
 </ui>
