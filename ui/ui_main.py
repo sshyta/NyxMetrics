@@ -82,10 +82,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.pushButton, 0, 0, 1, 1)
 
-        self.label = QLabel(self.layoutWidget)
-        self.label.setObjectName("label")
+        self.status_label = QLabel(self.layoutWidget)
+        self.status_label.setObjectName("status_label")
 
-        self.gridLayout.addWidget(self.label, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.status_label, 0, 1, 1, 1)
 
         self.pushButton_2 = QPushButton(self.layoutWidget)
         self.pushButton_2.setObjectName("pushButton_2")
@@ -122,7 +122,6 @@ class Ui_MainWindow(object):
         QMetaObject.connectSlotsByName(MainWindow)
 
     # setupUi
-
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(
             QCoreApplication.translate("MainWindow", "Nyx metrics", None)
@@ -130,7 +129,7 @@ class Ui_MainWindow(object):
         self.pushButton.setText(
             QCoreApplication.translate("MainWindow", "Upload file...", None)
         )
-        self.label.setText(
+        self.status_label.setText(
             QCoreApplication.translate(
                 "MainWindow",
                 "\u0424\u0430\u0439\u043b \u043d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d",
