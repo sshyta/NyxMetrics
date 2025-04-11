@@ -10,8 +10,7 @@ class NyxMetric(QMainWindow):
         self.ui.setupUi(self)
         self.ui.retranslateUi(self)
         
-        
-        self.file_loader = LoadingFile(self)
+        self.file_loader = LoadingFile(self, self.ui.status_label)
         self.ui.pushButton.clicked.connect(self.file_loader.load_file)
         
 if __name__ == "__main__":
