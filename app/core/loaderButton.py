@@ -15,7 +15,7 @@ class LoadingFile:
             "",
             "CSV (*.csv);;Excel (*.xlsx *.xls);;Все файлы (*)",
         )
-
+        
         if not file_path:
             if self.status_label:
                 self.status_label.setText("Файл не выбран")
@@ -24,7 +24,7 @@ class LoadingFile:
         try:
             if file_path.endswith(".csv"):
                 self.df = pd.read_csv(file_path)
-            elif file_path.endswith((".xlsx", ".xls")):
+            elif file_path.endswith(".xlsx", ".xls"):
                 self.df = pd.read_excel(file_path)
             else:
                 if self.status_label:
@@ -34,7 +34,6 @@ class LoadingFile:
             if self.status_label:
                 file_name = file_path.split("/")[-1]
                 self.status_label.setText(f"Загружен: {file_name}")
-
                 return True, file_name
 
         except Exception as e:
