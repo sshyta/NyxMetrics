@@ -11,8 +11,17 @@ class NyxMetric(QMainWindow):
         self.ui.setupUi(self)
         self.ui.retranslateUi(self)
         
-        self.file_loader = LoadingFile(self, self.ui.status_label)
-        self.ui.pushButton.clicked.connect(self.file_loader.load_file)
+        self.table_viewer = TableViewer(self.ui.centralwidget) # Экземпляр класса TableViewer
+        self.table_viewer.setGeometry(self.ui.tableView.geometry())
+        self.ui.tableView.setParent(None)
+        
+        
+        self.file_loader = LoadingFile(self, self.ui.status_label) # Экземпляр класса LoadingFile
+        self.ui.pushButton.clicked.connect(self.file_loader.load_file) # Подключение кнопки к загрузке файлов
+        self.file_loader.file_loaded.connect(self.update_table) # Подключение к таблице
+        
+    def update_table(self, df):
+        self.table_viewer.display_data(df)   
         
         
 if __name__ == "__main__":
