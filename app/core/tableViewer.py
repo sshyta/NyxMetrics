@@ -3,22 +3,22 @@ from PyQt6.QtGui import QStandardItemModel, QStandardItem
 
 
 class TableViewer(QTableView):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        super().__init__(parent)
         self.__setup_table()
     
         
     def __setup_table(self):
         self.setAlternatingRowColors(True)
-        self.horizontalHeader().setSelectionResizeMode(QHeaderView.Stretch)
+        self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.setModel(QStandardItemModel())
         
     
     def display_data(self, data):
-        model = QStandardItemModel()
+        model = QStandardItemModel() # Создание новой модели данных
         
         if not data.empty:
-            model.setHorizontalHeaderLabels(data.columns.astype(str))
+            model.setHorizontalHeaderLabels(data.columns.astype(str)) # Парсим заголовки из дата сета
             
             for _, row in data.iterrows():
                 items = [QStandardItem(str(val)) for val in row]
