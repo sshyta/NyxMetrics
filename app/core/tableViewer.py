@@ -6,8 +6,8 @@ class TableViewer(QTableView):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.__setup_table()
-    
         
+
     def __setup_table(self):
         self.setAlternatingRowColors(True)
         self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
@@ -25,4 +25,7 @@ class TableViewer(QTableView):
                 model.appendRow(items)
             
         self.setModel(model)
-        self.resizeColumnsToContents()        
+        self.resizeColumnsToContents() 
+
+    def clear_data(self):
+        self.setModel(QStandardItemModel())   
