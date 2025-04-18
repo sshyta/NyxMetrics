@@ -15,15 +15,17 @@ class NyxMetric(QMainWindow):
         self.table_viewer.setGeometry(self.ui.tableView.geometry())
         self.ui.tableView.setParent(None)
         
-        
         self.file_loader = LoadingFile(self, self.ui.status_label) # Экземпляр класса LoadingFile
         self.ui.pushButton.clicked.connect(self.file_loader.load_file) # Подключение кнопки к загрузке файлов
+        self.ui.pushButton_2.clicked.connect(self.clear_table) # Подключение кнопки очистки данных
         self.file_loader.file_loaded.connect(self.update_table) # Подключение к таблице
         
     def update_table(self, df):
         self.table_viewer.display_data(df)   
         
-        
+    def clear_table(self):
+        self.table_viewer.clear_data()
+            
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     windows = NyxMetric()
