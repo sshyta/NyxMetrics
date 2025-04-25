@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1115</width>
+    <width>1101</width>
     <height>750</height>
    </rect>
   </property>
@@ -18,48 +18,238 @@
 font-family: Zen Kaku Gothic New;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableView" name="tableView">
+   <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>1071</width>
-      <height>611</height>
+      <x>10</x>
+      <y>0</y>
+      <width>1091</width>
+      <height>711</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>361</width>
-      <height>27</height>
-     </rect>
+    <property name="currentIndex">
+     <number>0</number>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Upload file...</string>
-       </property>
+    <widget class="QWidget" name="page">
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>351</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="2">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>Сlear</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Файл не выбран</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton">
+         <property name="font">
+          <font>
+           <family>Zen Kaku Gothic New</family>
+           <stylestrategy>PreferDefault</stylestrategy>
+           <hintingpreference>PreferVerticalHinting</hintingpreference>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Upload</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>90</y>
+        <width>1071</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>66</red>
+            <green>66</green>
+            <blue>66</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font">
+       <font>
+        <family>Zen Kaku Gothic New</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabWidget::pane {
+    border: none;
+    background: transparent;
+}
+
+QTabBar {
+    qproperty-drawBase: 0;
+}
+
+QTabBar::tab {
+    background: transparent;
+    border: none;
+    color: #777;
+    padding: 6px 15px;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+}
+
+QTabBar::tab:selected {
+    color: #000;
+    font-weight: 500;
+    border-bottom: 2px solid #000;
+}
+
+QTabBar::tab:hover {
+    color: #333;
+}
+</string>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::TabPosition::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::TabShape::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::TextElideMode::ElideRight</enum>
+      </property>
+      <widget class="QWidget" name="tab_1">
+       <attribute name="title">
+        <string>Data</string>
+       </attribute>
+       <widget class="QTableView" name="tableView">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1071</width>
+          <height>571</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Файл не выбран</string>
-       </property>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Charts</string>
+       </attribute>
       </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>Сlear</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -67,8 +257,8 @@ font-family: Zen Kaku Gothic New;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1115</width>
-     <height>33</height>
+     <width>1101</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="defaultUp">
@@ -78,6 +268,11 @@ font-family: Zen Kaku Gothic New;</string>
     <bool>false</bool>
    </property>
    <widget class="QMenu" name="menu">
+    <property name="font">
+     <font>
+      <family>Zen Kaku Gothic New</family>
+     </font>
+    </property>
     <property name="title">
      <string>Home</string>
     </property>
@@ -108,7 +303,7 @@ font-family: Zen Kaku Gothic New;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../qrc/rc-res.qrc"/>
+  <include location="../qrc/rc_res.qrc"/>
  </resources>
  <connections/>
 </ui>

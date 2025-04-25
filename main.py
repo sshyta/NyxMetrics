@@ -1,34 +1,50 @@
-import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow
-from ui.ui_main import Ui_MainWindow
-from app.core.loaderButton import LoadingFile
-from app.core.tableViewer import TableViewer
+# import sys
+# from PyQt6.QtWidgets import QApplication, QMainWindow
+# from ui.ui_main import Ui_MainWindow
+# from app.core.loaderButton import LoadingFile
+# from app.core.tableViewer import TableViewer
 
-class NyxMetric(QMainWindow):
+# class NyxMetric(QMainWindow):
+#     def __init__(self):
+#         super(NyxMetric, self).__init__()
+#         self.ui = Ui_MainWindow()
+#         self.ui.setupUi(self)
+#         self.ui.retranslateUi(self)
+        
+#         self.table_viewer = TableViewer(self.ui.centralwidget) # Экземпляр класса TableViewer
+#         self.table_viewer.setGeometry(self.ui.tableView.geometry())
+#         self.ui.tableView.setParent(None)
+        
+#         self.file_loader = LoadingFile(self, self.ui.status_label) # Экземпляр класса LoadingFile
+#         self.ui.pushButton.clicked.connect(self.file_loader.load_file) # Подключение кнопки к загрузке файлов
+#         self.ui.pushButton_2.clicked.connect(self.clear_data_and_lable) # Подключение кнопки очистки данных
+#         self.file_loader.file_loaded.connect(self.update_table) # Подключение к таблице
+        
+#     def update_table(self, df):
+#         self.table_viewer.display_data(df)   
+
+#     def clear_data_and_lable(self):
+#         self.file_loader.clear_lable()
+#         self.table_viewer.clear_data()
+
+# if __name__ == "__main__":
+#     app = QApplication(sys.argv)
+#     windows = NyxMetric()
+#     windows.show()
+#     sys.exit(app.exec())
+
+import sys
+from PyQt6 import QtWidgets
+from ui.ui_main import Ui_MainWindow  # Импортируем твой класс из ui_main.py
+
+class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
-        super(NyxMetric, self).__init__()
+        super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.retranslateUi(self)
-        
-        self.table_viewer = TableViewer(self.ui.centralwidget) # Экземпляр класса TableViewer
-        self.table_viewer.setGeometry(self.ui.tableView.geometry())
-        self.ui.tableView.setParent(None)
-        
-        self.file_loader = LoadingFile(self, self.ui.status_label) # Экземпляр класса LoadingFile
-        self.ui.pushButton.clicked.connect(self.file_loader.load_file) # Подключение кнопки к загрузке файлов
-        self.ui.pushButton_2.clicked.connect(self.clear_data_and_lable) # Подключение кнопки очистки данных
-        self.file_loader.file_loaded.connect(self.update_table) # Подключение к таблице
-        
-    def update_table(self, df):
-        self.table_viewer.display_data(df)   
-
-    def clear_data_and_lable(self):
-        self.file_loader.clear_lable()
-        self.table_viewer.clear_data()
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    windows = NyxMetric()
-    windows.show()
+    app = QtWidgets.QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
     sys.exit(app.exec())
