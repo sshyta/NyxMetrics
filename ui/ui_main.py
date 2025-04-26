@@ -116,4 +116,3 @@ class Ui_MainWindow(object):
         self.charts_btn.setText(QCoreApplication.translate("MainWindow", u"Charts", None))
         self.settings_btn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
-
