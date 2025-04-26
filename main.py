@@ -23,8 +23,8 @@ class NyxMetric(QMainWindow):
         self.ui.tableView.setParent(None)
 
         self.file_loader = LoadingFile(self, self.ui.status_label) # Экземпляр класса LoadingFile
-        self.ui.pushButton.clicked.connect(self.file_loader.load_file) # Подключение кнопки к загрузке файлов
-        self.ui.pushButton_2.clicked.connect(self.clear_data_and_lable) # Подключение кнопки очистки данных
+        self.ui.uploadButton.clicked.connect(self.file_loader.load_file) # Подключение кнопки к загрузке файлов
+        self.ui.clearButton.clicked.connect(self.clear_data_and_lable) # Подключение кнопки очистки данных
         self.file_loader.file_loaded.connect(self.update_table) # Подключение к таблице
 
     def showHome(self):
