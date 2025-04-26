@@ -28,9 +28,78 @@ font-family: Zen Kaku Gothic New;</string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
-    <widget class="QWidget" name="Home"/>
+    <widget class="QWidget" name="Home">
+     <widget class="QOpenGLWidget" name="WICGLWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>111</width>
+        <height>81</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>282</y>
+        <width>171</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLineEdit" name="login_line">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Login...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="password_line">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Password...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>350</y>
+        <width>171</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="sign_in_btn">
+         <property name="text">
+          <string>Sign in</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sign_up_btn">
+         <property name="text">
+          <string>Sign up</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
     <widget class="QWidget" name="Data">
      <widget class="QTableView" name="tableView">
       <property name="geometry">
