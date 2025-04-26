@@ -45,3 +45,5 @@ class LoadingFile(QObject):
         except Exception as e:
             if self.status_label.setText(f"Ошибка: {str(e)}"):
                 return False, f"Ошибка: {str(e)}"
+    def clear_lable(self):
+        self.status_label.setText("Файл не выбран")

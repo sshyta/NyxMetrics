@@ -26,3 +26,5 @@ class TableViewer(QTableView):
             
         self.setModel(model)
         self.resizeColumnsToContents()        
+    def clear_data(self):
+        self.setModel(QStandardItemModel())
