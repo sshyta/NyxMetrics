@@ -50,4 +50,3 @@ class LoadingFile(QObject):
     def clear_lable(self):
         self.status_label.setText("Файл не выбран")
 
-    

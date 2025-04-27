@@ -1,7 +1,8 @@
 venv/
 
-pycache/
 
-ui/pycache
+__pycache__/
 
-app/core/pycache
+ui/__pycache__
+
+app/core/__pycache__
