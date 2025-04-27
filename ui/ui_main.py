@@ -199,7 +199,6 @@ class Ui_MainWindow(object):
         self.clearButton.setText(QCoreApplication.translate("MainWindow", u"\u0421lear", None))
         self.home_btn.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.date_btn.setText(QCoreApplication.translate("MainWindow", u"Data", None))
-        self.
-        _btn.setText(QCoreApplication.translate("MainWindow", u"Charts", None))
+        self.charts_btn.setText(QCoreApplication.translate("MainWindow", u"Charts", None))
         self.settings_btn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
