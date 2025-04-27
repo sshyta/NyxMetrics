@@ -30,7 +30,66 @@ font-family: Zen Kaku Gothic New;</string>
     <property name="currentIndex">
      <number>1</number>
     </property>
-    <widget class="QWidget" name="Home"/>
+    <widget class="QWidget" name="Home">
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>282</y>
+        <width>171</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLineEdit" name="login_line">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Login...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="password_line">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Password...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>350</y>
+        <width>171</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="sign_in_btn">
+         <property name="text">
+          <string>Sign in</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sign_up_btn">
+         <property name="text">
+          <string>Sign up</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
     <widget class="QWidget" name="Data">
      <widget class="QTableView" name="tableView">
       <property name="geometry">
@@ -60,7 +119,7 @@ font-family: Zen Kaku Gothic New;</string>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="status_label">
          <property name="text">
           <string>Файл не выбран</string>
          </property>
@@ -76,7 +135,40 @@ font-family: Zen Kaku Gothic New;</string>
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="Charts"/>
+    <widget class="QWidget" name="Charts">
+     <widget class="QFrame" name="graph_container">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>60</y>
+        <width>821</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+     </widget>
+     <widget class="QFrame" name="preset_container">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>241</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="Settings"/>
    </widget>
    <widget class="QWidget" name="layoutWidget">

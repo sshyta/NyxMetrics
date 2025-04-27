@@ -1,8 +1,14 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QFrame
 from ui.ui_main import Ui_MainWindow
 from app.core.loaderButton import LoadingFile
 from app.core.tableViewer import TableViewer
+from matplotlib.backends.backend_qtagg import FigureCanvas
+from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+from matplotlib.figure import Figure
+from app.core.graphBuilder import MplCanvas
+
 
 class NyxMetric(QMainWindow):
     def __init__(self):
@@ -13,6 +19,11 @@ class NyxMetric(QMainWindow):
 
         self.ui.stackedWidget.setCurrentIndex(0)
 
+        layout = QVBoxLayout(self.ui.graph_container)
+        canvas = MplCanvas()
+        canvas.axes.plot([0, 1, 2], [2, 5, 6])
+        layout.addWidget(canvas)
+        
         self.ui.home_btn.clicked.connect(self.showHome)
         self.ui.date_btn.clicked.connect(self.showData)
         self.ui.charts_btn.clicked.connect(self.showCharts)
