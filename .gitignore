@@ -1,1 +1,7 @@
 venv/
+
+pycache/
+
+ui/pycache
+
+app/core/pycache
