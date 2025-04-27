@@ -15,7 +15,6 @@ from PyQt6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PyQt6.QtOpenGLWidgets import QOpenGLWidget
 from PyQt6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QHeaderView,
     QLabel, QLineEdit, QMainWindow, QPushButton,
     QSizePolicy, QStackedWidget, QTableView, QVBoxLayout,
@@ -35,9 +34,6 @@ class Ui_MainWindow(object):
         self.stackedWidget.setGeometry(QRect(0, 50, 1091, 671))
         self.Home = QWidget()
         self.Home.setObjectName(u"Home")
-        self.WICGLWidget = QOpenGLWidget(self.Home)
-        self.WICGLWidget.setObjectName(u"WICGLWidget")
-        self.WICGLWidget.setGeometry(QRect(20, 20, 111, 81))
         self.layoutWidget = QWidget(self.Home)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(830, 282, 171, 61))

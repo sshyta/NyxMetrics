@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout
 from ui.ui_main import Ui_MainWindow
 from app.core.loaderButton import LoadingFile
 from app.core.tableViewer import TableViewer
