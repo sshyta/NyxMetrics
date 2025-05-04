@@ -15,10 +15,10 @@ from PyQt6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PyQt6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QTableView, QVBoxLayout, QWidget, QFrame)
-
+from PyQt6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QStackedWidget, QTableView,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -131,41 +131,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.charts_btn)
 
-
-        self.settings_btn = QPushButton(self.layoutWidget1)
-        self.settings_btn.setObjectName(u"settings_btn")
-
-        self.horizontalLayout.addWidget(self.settings_btn)
-
-        self.stackedWidget.addWidget(self.Data)
-        self.Charts = QWidget()
-        self.Charts.setObjectName(u"Charts")
-        self.stackedWidget.addWidget(self.Charts)
-        self.Settings = QWidget()
-        self.Settings.setObjectName(u"Settings")
-        self.stackedWidget.addWidget(self.Settings)
-        self.layoutWidget1 = QWidget(self.centralwidget)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(20, 10, 340, 27))
-        self.horizontalLayout = QHBoxLayout(self.layoutWidget1)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.home_btn = QPushButton(self.layoutWidget1)
-        self.home_btn.setObjectName(u"home_btn")
-
-        self.horizontalLayout.addWidget(self.home_btn)
-
-        self.date_btn = QPushButton(self.layoutWidget1)
-        self.date_btn.setObjectName(u"date_btn")
-
-        self.horizontalLayout.addWidget(self.date_btn)
-
-        self.charts_btn = QPushButton(self.layoutWidget1)
-        self.charts_btn.setObjectName(u"charts_btn")
-
-        self.horizontalLayout.addWidget(self.charts_btn)
-
-
         self.settings_btn = QPushButton(self.layoutWidget3)
         self.settings_btn.setObjectName(u"settings_btn")
 
@@ -175,9 +140,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-
         self.stackedWidget.setCurrentIndex(0)
-
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -185,15 +148,12 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Nyx metrics", None))
-
-
         self.login_line.setText("")
         self.login_line.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Login...", None))
         self.password_line.setText("")
         self.password_line.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password...", None))
         self.sign_in_btn.setText(QCoreApplication.translate("MainWindow", u"Sign in", None))
         self.sign_up_btn.setText(QCoreApplication.translate("MainWindow", u"Sign up", None))
-
         self.uploadButton.setText(QCoreApplication.translate("MainWindow", u"Upload file...", None))
         self.status_label.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0430\u0439\u043b \u043d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d", None))
         self.clearButton.setText(QCoreApplication.translate("MainWindow", u"\u0421lear", None))
@@ -202,3 +162,4 @@ class Ui_MainWindow(object):
         self.charts_btn.setText(QCoreApplication.translate("MainWindow", u"Charts", None))
         self.settings_btn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
+
