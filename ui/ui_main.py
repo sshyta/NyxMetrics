@@ -15,10 +15,10 @@ from PyQt6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PyQt6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QTableView, QVBoxLayout,
-    QWidget)
+from PyQt6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QStackedWidget, QTableView,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -96,6 +96,16 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.Data)
         self.Charts = QWidget()
         self.Charts.setObjectName(u"Charts")
+        self.graph_container = QFrame(self.Charts)
+        self.graph_container.setObjectName(u"graph_container")
+        self.graph_container.setGeometry(QRect(270, 60, 821, 601))
+        self.graph_container.setFrameShape(QFrame.Shape.StyledPanel)
+        self.graph_container.setFrameShadow(QFrame.Shadow.Raised)
+        self.preset_container = QFrame(self.Charts)
+        self.preset_container.setObjectName(u"preset_container")
+        self.preset_container.setGeometry(QRect(20, 60, 241, 601))
+        self.preset_container.setFrameShape(QFrame.Shape.StyledPanel)
+        self.preset_container.setFrameShadow(QFrame.Shadow.Raised)
         self.stackedWidget.addWidget(self.Charts)
         self.Settings = QWidget()
         self.Settings.setObjectName(u"Settings")
@@ -152,3 +162,4 @@ class Ui_MainWindow(object):
         self.charts_btn.setText(QCoreApplication.translate("MainWindow", u"Charts", None))
         self.settings_btn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
+

@@ -1,10 +1,16 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QVBoxLayout, QFrame # type: ignore
 from ui.ui_main import Ui_MainWindow
 from app.core.loaderButton import LoadingFile
 from app.core.tableViewer import TableViewer
+from matplotlib.backends.backend_qtagg import FigureCanvas # type: ignore
+from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar # type: ignore
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg # type: ignore
+from matplotlib.figure import Figure # type: ignore
+from app.core.graphBuilder import MplCanvas
 from app.core.check_db import *
 from app.core.handler.db_handler import *
+
 
 class NyxMetric(QMainWindow):
     def __init__(self):
@@ -14,6 +20,11 @@ class NyxMetric(QMainWindow):
         self.ui.retranslateUi(self)
 
         self.ui.stackedWidget.setCurrentIndex(0)
+        
+        layout = QVBoxLayout(self.ui.graph_container)
+        canvas = MplCanvas()
+        canvas.axes.plot([0, 1, 2], [2, 5, 6])
+        layout.addWidget(canvas)
 
         self.hide_menu_buttons()
 
