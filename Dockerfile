@@ -1,20 +1,20 @@
-FROM python:3.12-slim
+# FROM python:3.12-slim
 
-WORKDIR /home/sante/Документы/my_projects/NyxMetrics
+# WORKDIR /home/sante/Документы/my_projects/NyxMetrics
 
-# install poetry
-RUN pip install poetry
+# # install poetry
+# RUN pip install poetry
 
-# install libgl/linux
-RUN pip install libGL
+# # install libgl/linux
+# RUN pip install libGL
 
-# copy poetry files
-COPY pyproject.toml poetry.lock ./  
+# # copy poetry files
+# COPY pyproject.toml poetry.lock ./  
 
-RUN poetry config virtualenvs.create false 
+# RUN poetry config virtualenvs.create false 
 
-RUN poetry install --no-interaction --no-root
+# RUN poetry install --no-interaction --no-root
 
-COPY . .
+# COPY . .
 
-CMD [ "python", "main.py" ]
+# CMD [ "python", "main.py" ]
